@@ -1,6 +1,6 @@
 local augroup = vim.api.nvim_create_augroup("Javaplus", { clear = true })
 
-local classpath
+local classpath=""
 
 local function register_base()
 	classpath = vim.fn.getcwd()
