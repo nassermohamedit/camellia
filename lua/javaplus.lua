@@ -67,7 +67,7 @@ end
 local function run_main()
 	local bufnr = vim.api.nvim_get_current_buf()
 	local javafile = vim.api.nvim_buf_get_name(bufnr)
-	local rjr = get_plugin_dir() .. "/rjr.sh"
+	local rjr = get_plugin_dir() .. "/rjr/rjr.sh"
 	with_lsp_classpath(function(lsp_paths)
 		local cp = classpath
 		if lsp_paths then
