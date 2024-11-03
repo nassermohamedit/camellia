@@ -9,6 +9,9 @@ local project_name
 local classpath = {}
 
 local function save_paths()
+    if not util.exists(data_dir) then
+        util.create_dir(data_dir)
+    end
 	local fd = util.open_on_write(string.format("%s/%s", data_dir, project_name))
 	local data = util.join(classpath, "\n")
 	util.fs_write(fd, data)

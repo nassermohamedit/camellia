@@ -26,6 +26,15 @@ function M.close(fd)
 	vim.uv.fs_close(fd)
 end
 
+function M.exists(file)
+    local stat = M.fs_stat(file)
+    return not not stat
+end
+
+function M.create_dir(dir_path)
+    return vim.uv.fs_mkdir(dir_path, -1)
+end
+
 function M.join(t, sep)
 	local out = t[1]
 	for i = 2, #t do
