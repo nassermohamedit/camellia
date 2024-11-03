@@ -1,8 +1,8 @@
 local util = require("util")
 
-local data_dir = string.format("%s/javaplus", vim.fn.stdpath("data"))
+local data_dir = string.format("%s/camellia", vim.fn.stdpath("data"))
 
-local augroup = vim.api.nvim_create_augroup("Javaplus", { clear = true })
+local augroup = vim.api.nvim_create_augroup("camellia", { clear = true })
 
 local project_name
 

@@ -1,3 +1,3 @@
-# Javaplus
+# Camellia Neovim
 
-Javaplus is a Neovim plugin for Java support.
+Camellia is a Neovim plugin for Java support.
