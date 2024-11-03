@@ -45,7 +45,7 @@ function M.add_unique(t, x)
 end
 
 function M.is_java(file)
-    return "java" == string.sub(file, -4)
+    return ".java" == string.sub(file, -5)
 end
 
 function M.merge(t1, t2)
