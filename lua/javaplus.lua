@@ -22,10 +22,10 @@ local function try_read_paths()
 		local data = util.fs_read(fd, stat.size)
 		data = string.gsub(data, "\r", "")
 		classpath = vim.split(data, "\n")
-    else
-        if not stat then
-		    util.create(data_file)
-        end
+	else
+		if not stat then
+			util.create(data_file)
+		end
 		return
 	end
 end
@@ -60,13 +60,13 @@ local function run_main()
 	end
 	local rjr = util.get_plugin_dir() .. "/rjr/rjr.sh"
 	util.with_lsp_classpath(function(lsp_paths)
-        local cp
+		local cp
 		if lsp_paths and #lsp_paths > 0 then
 			cp = util.merge(lsp_paths, classpath)
-        else
-            cp = classpath
+		else
+			cp = classpath
 		end
-        cp = util.join(cp, ":")
+		cp = util.join(cp, ":")
 		local buf = vim.api.nvim_create_buf(true, true)
 		vim.api.nvim_win_set_buf(0, buf)
 		vim.fn.termopen(rjr .. " -cp " .. cp .. " " .. javafile)
